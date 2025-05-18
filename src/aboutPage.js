@@ -4,12 +4,12 @@
 //including loading any content about the application and organization.
 //This imports helper functions
 //This imports the image
-// import aboutPageImage from '../images/aboutImage.png';
+ import aboutPageImage from './images/aboutImage.png';
 // This function creates a header element
 import {
   createHeader,
   createElement,
-  // createImage,
+  createImage,
 } from './utilityRenderFunctions.js';
 
 export const renderAboutPage = () => {
@@ -37,10 +37,16 @@ export const renderAboutPage = () => {
   const aboutP = createElement('p', text);
 
   // Create and set up the image
-  // const aboutImage = createImage(aboutPageImage, 'Child Studying');
-const img = document.createElement('img');
-img.src = './images/aboutImage.png'; // أو المسار الصحيح حسب مجلداتك
-img.alt = 'Child Studying';
+//  createImage(aboutPageImage, 'Child Studying');
+// console.log("Image Path:", aboutPageImage);
+const img = new URL('./images/aboutImage.png', import.meta.url).href;
+
+const image = document.createElement('img');
+image.src = homePageImage;
+image.alt = 'Child Studying';
+// const img = document.createElement('img');
+// img.src = './images/aboutImage.png'; // أو المسار الصحيح حسب مجلداتك
+// img.alt = 'Child Studying';
 
   // Append the text elements to the text container
   textContainer.append(heading, subHeading, aboutP);

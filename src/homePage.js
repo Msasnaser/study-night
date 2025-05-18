@@ -1,12 +1,12 @@
 //DO NOT CHANGE ANYTHING IN THIS FILE//
 // This file is responsible for loading the home page
 //Imports image for homepage
-// import homePageImage from '../images/homePage.png';
+ import homePageImage from './images/homePage.png';
 //Helper functions
 import {
   createHeader,
   createElement,
-  // createImage,
+  createImage,
 } from './utilityRenderFunctions.js';
 
 //Renders home page
@@ -25,17 +25,21 @@ const renderHomePage = () => {
   );
 
   //Creates elements
-  // const image = createImage(homePageImage, 'Desk of laptops');
+
+// const img = createImage(homePageImage, 'Child Studying');
+// console.log("Image Path:", homePageImage);
+
+const homePageImage = new URL('./images/homePage.png', import.meta.url).href;
+
 const image = document.createElement('img');
-image.src = './images/homePage.png';
-image.alt = 'Desk of laptops';
+image.src = homePageImage;
+image.alt = 'Child Studying';
 
-  //Container for elements
-  const homeContainer = document.createElement('div');
-  homeContainer.className = 'homeContainer';
+const homeContainer = document.createElement('div');
+homeContainer.className = 'homeContainer';
 
-  homeContainer.append(header, subHeading, image);
-  main.append(homeContainer);
+homeContainer.append(header, subHeading, image);
+main.append(homeContainer);
 };
 
 export { renderHomePage };
