@@ -5,11 +5,11 @@
 // and a button to shuffle the cards.
 
 // This function is responsible for generating the form used to create a new card.
-import { renderCardForm } from './createCard.js';
+import { renderCardForm } from '../src/createCard.js';
 // This function is responsible for shuffling the flashcard
-import { shuffle } from './shuffle.js';
+import { shuffle } from '../src/shuffle.js';
 // Functions responsible for creating toggle button used to toggle the forms visibility
-import { createToggleButton } from './utilityRenderFunctions.js';
+import { createToggleButton } from '../src/utilityRenderFunctions.js';
 
 // The flash cards have two sides
 // This generates one side of a flashcard card
