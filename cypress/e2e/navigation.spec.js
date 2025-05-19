@@ -3,18 +3,16 @@ describe('Navigation Test', () => {
     cy.visit('/');
   });
 
-  it('should navigate to Home page', () => {
-    cy.get('#homePage').click();
-    cy.contains('Study Night').should('exist');
-  });
+  const pages = [
+    { nav: 'nav_home', expectedText: 'Study Night' },
+    { nav: 'nav_about', expectedText: 'About Study Night' },
+    { nav: 'nav_cardsets', expectedText: 'Card Sets' }
+  ];
 
-  it('should navigate to About page', () => {
-    cy.get('#aboutPage').click();
-    cy.contains('About Study Night').should('exist');
-  });
-
-  it('should navigate to Card Sets page', () => {
-    cy.get('#cardSetPage').click();
-    cy.contains('Card Sets').should('exist');
+  pages.forEach(({ nav, expectedText }) => {
+    it(`should navigate to ${expectedText} page`, () => {
+      cy.get(`[data-cy=${nav}]`).click();
+      cy.contains(expectedText).should('exist');
+    });
   });
 });

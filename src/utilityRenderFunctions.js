@@ -43,18 +43,32 @@ const createLabel = (text, htmlFor) => {
 };
 
 // Helper function to create an input element
-const createInput = (name) => {
-  const input = document.createElement("input");
-  input.name = name;
-  input.id = name;
+// const createInput = (name) => {
+//   const input = document.createElement("input");
+//   input.name = name;
+//   input.id = name;
+//   return input;
+// };
+const createInput = (id) => {
+  const input = document.createElement('input');
+  input.id = id;
+  input.name = id;
+  input.setAttribute('data-cy', 'title_input');
   return input;
 };
 
-const createSubmitButton = (value) => {
-  const submit = document.createElement("input");
-  submit.type = "submit";
-  submit.value = value;
-  return submit;
+// const createSubmitButton = (value) => {
+//   const submit = document.createElement("input");
+//   submit.type = "submit";
+//   submit.value = value;
+//   return submit;
+// };
+const createSubmitButton = (text) => {
+  const button = document.createElement('button');
+  button.type = 'submit';
+  button.textContent = text;
+  button.setAttribute('data-cy', 'submit_button'); 
+  return button;
 };
 
 export {
