@@ -10,7 +10,7 @@ describe('Navigation Test', () => {
 
   it('should navigate to About page', () => {
     cy.get('#aboutPage').click();
-    cy.contains('About').should('exist');
+    cy.contains('About Study Night').should('exist');
   });
 
   it('should navigate to Card Sets page', () => {

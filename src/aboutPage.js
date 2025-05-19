@@ -39,11 +39,12 @@ export const renderAboutPage = () => {
   // Create and set up the image
 //  createImage(aboutPageImage, 'Child Studying');
 // console.log("Image Path:", aboutPageImage);
-const img = new URL('./images/aboutImage.png', import.meta.url).href;
+const aboutImage = new URL('./images/aboutImage.png', import.meta.url).href;
 
 const image = document.createElement('img');
-image.src = homePageImage;
+image.src = aboutImage;
 image.alt = 'Child Studying';
+
 // const img = document.createElement('img');
 // img.src = './images/aboutImage.png'; // أو المسار الصحيح حسب مجلداتك
 // img.alt = 'Child Studying';
@@ -52,7 +53,7 @@ image.alt = 'Child Studying';
   textContainer.append(heading, subHeading, aboutP);
 
   // Append the text container and image to the outer container
-containerOuter.append(textContainer, img);
+containerOuter.append(textContainer, image);
 
 
   // Append the outer container to the main content area
